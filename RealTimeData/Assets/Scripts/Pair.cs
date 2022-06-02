@@ -11,10 +11,11 @@ public class Pair
     public CreatePoints2D cp2d;
     public LineManager lineManager;
     private GameObject parent;
+    public int pairId;
     public Pair(int pairId, int id1, int id2){
         cp2d = GameObject.Find("PointCreator").GetComponent<CreatePoints2D>();
         lineManager = GameObject.Find("LineCreator").GetComponent<LineManager>();
-        
+        this.pairId = pairId;
         GameObject line = new GameObject($"Line{pairId}");
         line.transform.parent = GameObject.Find("Lines").transform;
         lr = line.AddComponent<LineRenderer>();

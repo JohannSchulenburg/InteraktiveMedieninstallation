@@ -52,11 +52,12 @@ public class ParticleAttraction : MonoBehaviour
                 {
                     var particle = particles[i];
 
-                    float distance = Vector3.Distance(target.position, particle.position);
+                    float distanceParticle = Vector3.Distance(target.position, particle.position);
+                    float distanceGO = Vector3.Distance(gameObject.transform.position, target.position);
 
-                    if (distance > 0.1f)
+                    if (distanceParticle > 0.1f)
                     {
-                        particle.position = Vector3.Lerp(particle.position, target.localPosition, Time.deltaTime * strength);
+                        particle.position = Vector3.Lerp(particle.position, (target.position-gameObject.transform.position)*10, Time.deltaTime * strength);
                         //particle.position = Vector3.MoveTowards(particle.position, target.position, strength);
                         particles[i] = particle;
                     }

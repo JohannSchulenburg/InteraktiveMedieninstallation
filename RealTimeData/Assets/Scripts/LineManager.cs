@@ -65,12 +65,12 @@ public class LineManager : MonoBehaviour
     void UpdatePairs(){
         foreach (Pair pair in pairs)
         {
-            if(pair.point1.GetComponent<MeshRenderer>().enabled && pair.point2.GetComponent<MeshRenderer>().enabled){
+            if(pair.point1.GetComponent<MeshRenderer>().enabled && pair.point2.GetComponent<MeshRenderer>().enabled&&pair.lr != null){
                 pair.lr.enabled = true;
                 pair.lr.SetPosition(0, pair.point1.transform.position);
                 pair.lr.SetPosition(1, pair.point2.transform.position);
             }
-            else{
+            else if(pair.lr != null){
                 pair.lr.enabled = false;
             }
         }

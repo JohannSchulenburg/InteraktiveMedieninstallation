@@ -18,11 +18,11 @@ public class Pair
         this.pairId = pairId;
         GameObject line = new GameObject($"Line{pairId}");
         line.transform.parent = GameObject.Find("Lines").transform;
-        lr = line.AddComponent<LineRenderer>();
+        /* lr = line.AddComponent<LineRenderer>();
         lr.startWidth = width;
         lr.endWidth = width;
         lr.positionCount = 2;
-        lr.material = lineManager.lineMaterial;
+        lr.material = lineManager.lineMaterial; */
         point1 = cp2d.landmarkCubes[id1];
         point2 = cp2d.landmarkCubes[id2];
     }

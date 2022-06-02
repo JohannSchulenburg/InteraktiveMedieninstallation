@@ -58,7 +58,7 @@ public class CreatePoints2D : MonoBehaviour
     }
     void CreatePoint(int id){
         landmarkCubes[id] = Instantiate(landmarkCube, new Vector3(-landmarks[id].pos.x, -landmarks[id].pos.y, 0) * scale, Quaternion.identity);
-        landmarkCubes[id].transform.parent = parent.transform;
+        //landmarkCubes[id].transform.parent = parent.transform;
     }
     void ActivateLineCreator(){
         lineCreator.SetActive(true);
